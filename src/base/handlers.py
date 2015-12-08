@@ -197,6 +197,7 @@ class BaseHandler(webapp2.RequestHandler):
 
     self.response.headers['X-XSS-Protection'] = '1; mode=block'
     self.response.headers['X-Content-Type-Options'] = 'nosniff'
+    self.response.headers['X-Powered-By'] = 'philames@'
 
     csp_policy = self.app.config.get('csp_policy', constants.DEFAULT_CSP_POLICY)
     report_only = False
